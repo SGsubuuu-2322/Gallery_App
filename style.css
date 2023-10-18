@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fill-color: rgb(1, 170, 243);
+  --empty-color: rgb(172, 177, 179);
+}
+
 body {
   font-family: "Young serif";
   display: flex;
@@ -13,4 +18,127 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+.container {
+  width: 95vw;
+  height: 95vh;
+  border: 8px solid rgb(38, 36, 36);
+  box-shadow: 0 0 8px 4px whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.photo-container {
+  width: 95%;
+  height: 80vh;
+  border: 4px solid rgb(82, 80, 78);
+  border-radius: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  overflow: hidden;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  color: whitesmoke;
+  border-radius: 50px;
+  flex: 0.5;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  /* transition: flex 0.8s ease-in; */
+  -webkit-transition: all 700ms ease-in;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.control-container {
+  text-align: center;
+  border: 3px solid rgb(255, 255, 255);
+  /* background-color: rgb(165, 213, 255); */
+}
+.circle-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 350px;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.circle-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: var(--empty-color);
+  transform: translateY(-50%);
+  z-index: -1;
+  /* font-size: 40px; */
+  transition: 0.7s ease;
+}
+
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background-color: var(--fill-color);
+  transform: translateY(-50%);
+  z-index: -1;
+  /* font-size: 40px; */
+  transition: 0.7s ease;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  background-color: aliceblue;
+  border: 4px solid var(--empty-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle.active {
+  border-color: var(--fill-color);
+}
+
+.btn {
+  background-color: rgb(121, 199, 255);
+  padding: 3px 5px;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  border: 0;
+  color: whitesmoke;
+  font-size: 14px;
+}
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:hover {
+  box-shadow: 0 0 4px 2px var(--fill-color);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--empty-color);
+  cursor: not-allowed;
 }
