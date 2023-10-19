@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -10,7 +9,7 @@
 }
 
 body {
-  font-family: "Young serif";
+  font-family: "Alfa Slab One";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +39,7 @@ body {
   background-color: rgb(172, 167, 167);
   display: flex;
   overflow: hidden;
+  transition: all 0.7s ease-in-out;
 }
 
 .panel {
@@ -68,7 +68,7 @@ body {
   left: 20px;
   opacity: 0;
   font-size: 27px;
-  color: transparent;
+  color: rgb(6, 6, 6);
   -webkit-text-stroke: 2px rgb(254, 255, 247);
 }
 
@@ -79,8 +79,13 @@ body {
 
 .control-container {
   text-align: center;
+  transition: all 0.7s ease-in-out;
+  /* border: 3px solid rgb(255, 255, 255); */
+}
+
+.show-casing {
   border: 3px solid rgb(255, 255, 255);
-  /* background-color: rgb(165, 213, 255); */
+  box-shadow: 0 0 5px 5px rgb(1, 170, 243);
 }
 .circle-container {
   display: flex;
@@ -129,7 +134,7 @@ body {
   align-items: center;
 }
 
-.circle.active {
+.circle.current {
   border-color: var(--fill-color);
 }
 
@@ -143,7 +148,7 @@ body {
   font-size: 14px;
 }
 .btn:active {
-  transform: scale(0.99);
+  transform: scale(0.9);
 }
 
 .btn:hover {
