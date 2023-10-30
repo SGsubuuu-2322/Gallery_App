@@ -1,3 +1,4 @@
+// These are the costants containing all important HTML element for further manipulation...
 const panels = document.querySelectorAll(".panel");
 const circles = document.querySelectorAll(".circle");
 const progress = document.getElementById("progress");
@@ -8,6 +9,7 @@ const photos = document.getElementById("photos");
 
 let currentCircle = 1;
 
+// These eventlisteners for the control buttons
 next.addEventListener("click", () => {
   currentCircle++;
   if (currentCircle > circles.length) {
@@ -27,6 +29,7 @@ prev.addEventListener("click", () => {
   updateProgress();
 });
 
+//This function is for adding some dynamic styling in this project...
 function showCasing() {
   control.classList.add("show-casing");
   photos.classList.add("show-casing");
@@ -35,6 +38,9 @@ function showCasing() {
     photos.classList.remove("show-casing");
   }, 1000);
 }
+
+
+// This function is for dynamic progress bar aimation for this web-app...
 
 function updateProgress() {
   panels.forEach((panel) => {
